@@ -187,7 +187,7 @@ section .about-self .left{
 
 /* 이미지 크기가 부모 영역을 넘지 않도록 부모 영역의 최대 크기로 지정 */
 section .about-self .left img{
-    max-width:100%
+    max-width:100%;
 }
 
 /* 본문 너비 절반 지정 및 오른쪽 배치 */
@@ -214,4 +214,62 @@ section .about-self .right p{
 section .about-self .right .social a{
     font-size:2.5rem;
     margin-right:0.2rem;
+}
+
+section .do-me::after {
+    content:"";
+    display:block;
+    clear:both;
+}
+
+/* 우선은 3분할이 안되서 flex 레이아웃 이용 */
+section .do-me{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* 사각형 크기와 간격, 내부 여백 설정 */
+section .do-me .do-inner{
+    background-color:#fff;
+    width:30%;
+    padding:2rem;
+    float:left;
+    margin-left:5%;
+    cursor:pointer;
+}
+
+/* 마지막 사각형의 외부 여백 설정 */
+section .do-me .do-inner:last-child{
+    margin-right:0px;
+}
+
+section .do-me .do-inner .icon i{
+    font-size:2.5rem;
+    color:#ff6a6a;
+}
+
+section .do-me .do-inner .content h3{
+    font-size:2rem;
+    margin:1rem 0;
+}
+
+section .do-me .do-inner .content p{
+    font-size:1.15rem;
+}
+
+section .do-me .do-inner:hover{
+    background-color:lightcoral;
+    color:white;
+}
+
+section .do-me .do-inner:hover i{
+    color:white;
+}
+
+.bg{
+    background:url('background.jpg') center center;
+    background-size:cover;
+    background-attachment:fixed;
+    height:650px;
 }
